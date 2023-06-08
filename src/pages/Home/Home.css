@@ -1,0 +1,74 @@
+.electoral-requirements {
+    border: 1px solid #CCC;
+}
+
+.electoral-system, .electoral-threshold {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    padding: 2em;
+}
+
+.electoral-requirement {
+    width: 10em;
+}
+
+.ballot {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding: 1.5em;
+}
+
+.party {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+}
+
+.party-color {
+    width: 1.5em;
+    height: 3em;
+}
+
+.party-input {
+    width: 5em;
+}
+
+.submit-btn {
+    width: 10em;
+    height: 3em;
+    margin: 2em auto;
+}
+
+@media screen and (max-width: 768px) {
+    .electoral-requirements {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2em;
+    }
+
+    .electoral-system, .electoral-threshold {
+        padding: 1em;
+    }
+
+    .ballot {
+        padding: 1em;
+    }
+
+    .party {
+        gap: 0 !important;
+    }
+
+    .party-color {
+        width: 1.5em;
+        height: 3em;
+    }
+}

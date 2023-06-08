@@ -1,0 +1,21 @@
+.results {
+    height: 100%;
+}
+
+.results-charts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+}
+
+@media screen and (max-width: 768px) {
+    .results-charts {
+        padding: 0;
+    }
+
+    .bar-chart {
+        width: 375px !important;
+    }
+}
