@@ -1,7 +1,6 @@
 import './Results.css';
-import { Stack } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, PieChart, Pie, Cell } from 'recharts';
+import ResultsCharts from './ResultsCharts';
 
 export default function Results({nd, syriza, pasok, kke, el, niki, pe, mera25, epam, ed, op, ps, antarsya, ek, kkeml, eke}) {
     const location = useLocation();
@@ -49,30 +48,7 @@ export default function Results({nd, syriza, pasok, kke, el, niki, pe, mera25, e
         <div className='results'>
             <header className='header'></header>
             <h1>Τα αποτελέσματα των επιλογών σας</h1>
-            <Stack className='results-charts' gap={5}>
-                <div className='results-chart'>
-                    <h2>Ποσοστό ψήφων</h2>
-                    <BarChart className='bar-chart' data={barData} width={1025} height={525} label='Ποσοστό'>
-                        <XAxis dataKey='party' />
-                        <YAxis domain={[0, upperHeight]}/>
-                        <Tooltip />
-                        <Legend content='Ποσοστό' />
-                        <Bar dataKey='percentage' fill={entry => entry.fill} />
-                    </BarChart>
-                </div>
-                <div className='results-chart'>
-                    <h2>Κατανομή εδρών</h2>
-                    <PieChart className='pie-chart' width={425} height={450}>
-                        <Pie data={pieData} dataKey='seats' nameKey='party' cx='50%' cy='50%' outerRadius={100} label>
-                            {pieData.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={entry.fill} />
-                            ))};
-                        </Pie>
-                        <Tooltip />
-                        <Legend />
-                    </PieChart>
-                </div>
-            </Stack>
+            <ResultsCharts barData={barData} pieData={pieData} upperHeight={upperHeight} />
         </div>
     )
 }
