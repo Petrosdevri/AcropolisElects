@@ -25,6 +25,9 @@ export default function Results({nd, syriza, pasok, kke, el, niki, pe, mera25, e
     {party: 'ΚΚΕ Μ-Λ', percentage: kkeml, fill: partyColors[14]},
     {party: 'ΕΚΕ', percentage: eke, fill: partyColors[15]}];
 
+    const maxPercentage = Math.max(...barData.map(entry => entry.percentage));
+    const upperHeight = Math.ceil(maxPercentage / 5) * 5;
+
     const pieData = [{party: 'ΝΔ', seats: seatDistribution[0], fill: partyColors[0]},
     {party: 'ΣΥΡΙΖΑ', seats: seatDistribution[1], fill: partyColors[1]},
     {party: 'ΠΑΣΟΚ', seats: seatDistribution[2], fill: partyColors[2]},
@@ -49,9 +52,9 @@ export default function Results({nd, syriza, pasok, kke, el, niki, pe, mera25, e
             <Stack className='results-charts' gap={5}>
                 <div className='results-chart'>
                     <h2>Ποσοστό ψήφων</h2>
-                    <BarChart className='bar-chart' data={barData} width={1025} height={325} label='Ποσοστό'>
+                    <BarChart className='bar-chart' data={barData} width={1025} height={525} label='Ποσοστό'>
                         <XAxis dataKey='party' />
-                        <YAxis />
+                        <YAxis domain={[0, upperHeight]}/>
                         <Tooltip />
                         <Legend content='Ποσοστό' />
                         <Bar dataKey='percentage' fill={entry => entry.fill} />
