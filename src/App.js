@@ -24,7 +24,7 @@ function App() {
   const [KKEML, setKKEML] = useState(0);
   const [EKE, setEKE] = useState(0);
   const [electoralSystem, setElectoralSystem] = useState('apliAnalogiki');
-  const [electoralThreshold, setElectoralThreshold] = useState(0);
+  const [electoralThreshold, setElectoralThreshold] = useState(3);
   const [seatDistribution, setSeatDistribution] = useState();
   const [showResults, setShowResults] = useState(false);
 

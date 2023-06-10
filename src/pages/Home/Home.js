@@ -30,7 +30,6 @@ export default function Home({nd, syriza, pasok, kke, el, niki, pe, mera25, epam
             return;
         }
 
-
         const percentages = [ndPercentage, syrizaPercentage, pasokPercentage, kkePercentage, elPercentage, nikiPercentage, pePercentage, mera25Percentage, epamPercentage, edPercentage, opPercentage, psPercentage, antarsyaPercentage, ekPercentage, kkemlPercentage, ekePercentage];
         let newSeatDistribution;
         if (electoralSystem === "apliAnalogiki") {
@@ -68,5 +67,3 @@ export default function Home({nd, syriza, pasok, kke, el, niki, pe, mera25, epam
         </Stack>
     )
 }
-
-//  href='/results'
