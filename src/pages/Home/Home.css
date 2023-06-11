@@ -15,10 +15,6 @@
 }
 
 .ballot {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 2em;
     padding: 1.5em;
 }
@@ -36,14 +32,17 @@
     height: 3em;
 }
 
-.party-input {
-    width: 5em;
-}
-
 .submit-btn {
+    background: #0055A0 !important;
+    border: 1px solid #0055A0 !important;
     width: 10em;
     height: 3em;
     margin: 2em auto;
+}
+
+.submit-btn:hover {
+    background: #003366 !important;
+    border: 1px solid #003366 !important;
 }
 
 @media screen and (max-width: 768px) {
@@ -63,12 +62,16 @@
         padding: 1em;
     }
 
-    .party {
-        gap: 0 !important;
-    }
-
     .party-color {
         width: 1.5em;
         height: 3em;
+    }
+
+    .ps > .party-color {
+        width: 24px !important;
+    }
+
+    .party-name {
+        font-size: 1em !important;
     }
 }
