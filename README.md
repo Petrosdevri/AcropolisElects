@@ -10,7 +10,7 @@ Acropolis Elects is a web application that simulates the distribution of seats i
 - Display the resulting seat distribution in a visual chart.
 ## Installation
 - Clone the repository:
-`git clone https://github.com/PoliVerse/AcropolisElects.git`
+`git clone https://github.com/Petrosdevri/AcropolisElects.git`
 - Navigate to the project directory: cd acropolis-elects
 - Install the dependencies: npm install
 - Start the development server: npm start
@@ -29,4 +29,4 @@ Contributions are welcome! If you have any suggestions, bug reports, or feature 
 This project is licensed under the GPL-3.0 License.
 
 ## Contact
-If you have any questions or inquiries, please contact me at your-email@example.com.
+If you have any questions or inquiries, please contact me at poliversegr@zohomail.eu.
