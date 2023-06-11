@@ -1,5 +1,7 @@
 .results {
+    width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 .results-charts {
@@ -15,7 +17,13 @@
         padding: 0;
     }
 
-    .bar-chart {
+    .bar-chart > svg {
+        width: 350px !important;
+        height: 450px !important;
+    }
+
+    .pie-chart > .recharts-legend-wrapper {
         width: 375px !important;
+        margin-left: 1.5em;
     }
 }

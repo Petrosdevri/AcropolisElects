@@ -2,7 +2,7 @@ import Party from './Party';
 
 export default function PartyBallot({ nd, syriza, pasok, kke, el, niki, pe, mera25, epam, ed, op, ps, antarsya, ek, kkeml, spartiates, setND, setSYRIZA, setPASOK, setKKE, setEL, setNIKI, setPE, setMeRA25, setEPAM, setED, setOP, setPS, setANTARSYA, setEK, setKKEML, setSpartiates }) {
     return (
-        <div className='ballot'>
+        <div className='ballot d-flex flex-column justify-content-center align-items-center'>
             <h4>Επιλέξτε το ποσοστό των ψήφων που θα λάβει κάθε κόμμα.</h4>
             <div className='ballot-list'>
                 <Party color='#1D6EC8' name='Νέα Δημοκρατία' votes={nd} setVotes={setND} />
