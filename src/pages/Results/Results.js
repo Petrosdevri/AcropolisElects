@@ -2,10 +2,10 @@ import './Results.css';
 import { useLocation } from 'react-router-dom';
 import ResultsCharts from './ResultsCharts';
 
-export default function Results({nd, syriza, pasok, kke, el, niki, pe, mera25, epam, ed, op, ps, antarsya, ek, kkeml, eke}) {
+export default function Results({nd, syriza, pasok, kke, el, niki, pe, mera25, epam, ed, op, ps, antarsya, ek, kkeml, spartiates}) {
     const location = useLocation();
     const seatDistribution = location.state.seatDistribution;
-    const partyColors = ['#1D6EC8', '#CC1C24', '#00793A', '#DF251C', '#8DBEE2', '#BD552C', '#972490', '#EB4326', '#16459A', '#EB8C1E', '#509E2F', '#1B395A', '#D82F33', '#F2D308', '#D7062C', '#072C80'];
+    const partyColors = ['#1D6EC8', '#CC1C24', '#00793A', '#DF251C', '#8DBEE2', '#BD552C', '#972490', '#EB4326', '#16459A', '#EB8C1E', '#509E2F', '#1B395A', '#D82F33', '#F2D308', '#D7062C', '#E4B365'];
 
     const barData = [{party: 'ΝΔ', percentage: nd, fill: partyColors[0]},
     {party: 'ΣΥΡΙΖΑ', percentage: syriza, fill: partyColors[1]},
@@ -22,7 +22,7 @@ export default function Results({nd, syriza, pasok, kke, el, niki, pe, mera25, e
     {party: 'ΑΝΤΑΡΣΥΑ', percentage: antarsya, fill: partyColors[12]},
     {party: 'ΕΚ', percentage: ek, fill: partyColors[13]},
     {party: 'ΚΚΕ Μ-Λ', percentage: kkeml, fill: partyColors[14]},
-    {party: 'ΕΚΕ', percentage: eke, fill: partyColors[15]}];
+    {party: 'ΣΠ', percentage: spartiates, fill: partyColors[15]}];
 
     const maxPercentage = Math.max(...barData.map(entry => entry.percentage));
     const upperHeight = Math.ceil(maxPercentage / 5) * 5;
@@ -42,7 +42,7 @@ export default function Results({nd, syriza, pasok, kke, el, niki, pe, mera25, e
     {party: 'ΑΝΤΑΡΣΥΑ', seats: seatDistribution[12], fill: partyColors[12]},
     {party: 'ΕΚ', seats: seatDistribution[13], fill: partyColors[13]},
     {party: 'ΚΚΕ Μ-Λ', seats: seatDistribution[14], fill: partyColors[14]},
-    {party: 'ΕΚΕ', seats: seatDistribution[15], fill: partyColors[15]}];
+    {party: 'ΣΠ', seats: seatDistribution[15], fill: partyColors[15]}];
 
     return (
         <div className='results'>

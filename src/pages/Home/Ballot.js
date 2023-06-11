@@ -1,6 +1,6 @@
 import Party from './Party';
 
-export default function PartyBallot({ nd, syriza, pasok, kke, el, niki, pe, mera25, epam, ed, op, ps, antarsya, ek, kkeml, eke, setND, setSYRIZA, setPASOK, setKKE, setEL, setNIKI, setPE, setMeRA25, setEPAM, setED, setOP, setPS, setANTARSYA, setEK, setKKEML, setEKE }) {
+export default function PartyBallot({ nd, syriza, pasok, kke, el, niki, pe, mera25, epam, ed, op, ps, antarsya, ek, kkeml, spartiates, setND, setSYRIZA, setPASOK, setKKE, setEL, setNIKI, setPE, setMeRA25, setEPAM, setED, setOP, setPS, setANTARSYA, setEK, setKKEML, setSpartiates }) {
     return (
         <div className='ballot'>
             <h4>Επιλέξτε το ποσοστό των ψήφων που θα λάβει κάθε κόμμα.</h4>
@@ -20,7 +20,7 @@ export default function PartyBallot({ nd, syriza, pasok, kke, el, niki, pe, mera
                 <Party color='#D82F33' name='ΑΝΤΑΡΣΥΑ' votes={antarsya} setVotes={setANTARSYA} />
                 <Party color='#F2D308' name='Ένωση Κεντρώων' votes={ek} setVotes={setEK} />
                 <Party color='#D7062C' name='ΚΚΕ(μ-λ)' votes={kkeml} setVotes={setKKEML} />
-                <Party color='#072C80' name='Εθνικό Κόμμα Έλληνες' votes={eke} setVotes={setEKE} />
+                <Party color='#E4B365' name='Σπαρτιάτες' votes={spartiates} setVotes={setSpartiates} />
             </div>
         </div>
     )
