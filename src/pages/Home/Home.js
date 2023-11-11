@@ -7,6 +7,10 @@ import Ballot from './Ballot';
 export default function Home({nd, syriza, pasok, kke, el, niki, pe, mera25, epam, ed, op, ps, antarsya, ek, kkeml, spartiates, electoralSystem, electoralThreshold, seatDistribution, showResults, setND, setSYRIZA, setPASOK, setKKE, setEL, setNIKI, setPE, setMeRA25, setEPAM, setED, setOP, setPS, setANTARSYA, setEK, setKKEML, setSpartiates, setElectoralSystem, setElectoralThreshold, setSeatDistribution, setShowResults}) {
     const navigate = useNavigate();
 
+    function isMobileDevice() {
+        return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+    }
+
     function handleResults() {
         const ndPercentage = parseFloat(nd);
         const syrizaPercentage = parseFloat(syriza);
@@ -61,9 +65,8 @@ export default function Home({nd, syriza, pasok, kke, el, niki, pe, mera25, epam
             </div>
             <p>Η σειρά των κομμάτων βασίζεται στα αποτελέσματά τους στις προηγούμενες εκλογές.</p>
             <Ballot nd={nd} syriza={syriza} pasok={pasok} kke={kke} el={el} niki={niki} pe={pe} mera25={mera25} epam={epam} ed={ed} op={op} ps={ps} antarsya={antarsya} ek={ek} kkeml={kkeml} spartiates={spartiates} showResults={showResults} setND={setND} setSYRIZA={setSYRIZA} setPASOK={setPASOK} setKKE={setKKE} setEL={setEL} setNIKI={setNIKI} setPE={setPE} setMeRA25={setMeRA25} setEPAM={setEPAM} setED={setED} setOP={setOP} setPS={setPS} setANTARSYA={setANTARSYA} setEK={setEK} setKKEML={setKKEML} setSpartiates={setSpartiates} setShowResults={setShowResults} />
-            <Button className='submit-btn' onClick={() => {
-                setShowResults(true);
-                handleResults();}}>Υποβολή</Button>
+            {isMobileDevice() ? <Button className='submit-btn' onClick={() => { setShowResults(true); handleResults(); }}>Υποβολή</Button> :
+            <Button className='submit-btn' onTouchEnd={() => { setShowResults(true); handleResults(); }}>Υποβολή</Button>}
         </Stack>
     )
 }
