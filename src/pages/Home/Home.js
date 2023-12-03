@@ -42,6 +42,7 @@ export default function Home({nd, syriza, pasok, kke, el, niki, pe, mera25, epam
           newSeatDistribution = enisximeniAnalogiki(percentages, electoralThreshold);
         }
         setSeatDistribution(newSeatDistribution);
+        console.log(seatDistribution);
         navigate("/results", { state: { seatDistribution: newSeatDistribution } });
     }
 
@@ -66,7 +67,7 @@ export default function Home({nd, syriza, pasok, kke, el, niki, pe, mera25, epam
             <p>Η σειρά των κομμάτων βασίζεται στα αποτελέσματά τους στις προηγούμενες εκλογές.</p>
             <Ballot nd={nd} syriza={syriza} pasok={pasok} kke={kke} el={el} niki={niki} pe={pe} mera25={mera25} epam={epam} ed={ed} op={op} ps={ps} antarsya={antarsya} ek={ek} kkeml={kkeml} spartiates={spartiates} showResults={showResults} setND={setND} setSYRIZA={setSYRIZA} setPASOK={setPASOK} setKKE={setKKE} setEL={setEL} setNIKI={setNIKI} setPE={setPE} setMeRA25={setMeRA25} setEPAM={setEPAM} setED={setED} setOP={setOP} setPS={setPS} setANTARSYA={setANTARSYA} setEK={setEK} setKKEML={setKKEML} setSpartiates={setSpartiates} setShowResults={setShowResults} />
             {isMobileDevice() ? <Button className='submit-btn' onClick={() => { setShowResults(true); handleResults(); }}>Υποβολή</Button> :
-            <Button className='submit-btn' onTouchEnd={() => { setShowResults(true); handleResults(); }}>Υποβολή</Button>}
+            <Button className='submit-btn' onClick={() => { setShowResults(true); handleResults(); }}>Υποβολή</Button> }
         </Stack>
     )
 }
