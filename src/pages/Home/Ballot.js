@@ -9,6 +9,7 @@ export default function PartyBallot({ nd, syriza, pasok, kke, el, niki, pe, mera
                 <Party color='#CC1C24' name='ΣΥΡΙΖΑ' votes={syriza} setVotes={setSYRIZA} />
                 <Party color='#00793A' name='ΠΑΣΟΚ' votes={pasok} setVotes={setPASOK} />
                 <Party color='#DF251C' name='ΚΚΕ' votes={kke} setVotes={setKKE} />
+                <Party color='#E4B365' name='Σπαρτιάτες' votes={spartiates} setVotes={setSpartiates} />
                 <Party color='#8DBEE2' name='Ελληνική Λύση' votes={el} setVotes={setEL} />
                 <Party color='#BD552C' name='Νίκη' votes={niki} setVotes={setNIKI} />
                 <Party color='#972490' name='Πλεύση Ελευθερίας' votes={pe} setVotes={setPE} />
@@ -20,7 +21,6 @@ export default function PartyBallot({ nd, syriza, pasok, kke, el, niki, pe, mera
                 <Party color='#D82F33' name='ΑΝΤΑΡΣΥΑ' votes={antarsya} setVotes={setANTARSYA} />
                 <Party color='#F2D308' name='Ένωση Κεντρώων' votes={ek} setVotes={setEK} />
                 <Party color='#D7062C' name='ΚΚΕ(μ-λ)' votes={kkeml} setVotes={setKKEML} />
-                <Party color='#E4B365' name='Σπαρτιάτες' votes={spartiates} setVotes={setSpartiates} />
             </div>
         </div>
     )

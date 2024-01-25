@@ -4,7 +4,7 @@ import { apliAnalogiki, enisximeniAnalogiki } from '@poliverse/greek-electoral-s
 import { Button, Stack } from 'react-bootstrap';
 import Ballot from './Ballot';
 
-export default function Home({nd, syriza, pasok, kke, el, niki, pe, mera25, epam, ed, op, ps, antarsya, ek, kkeml, spartiates, electoralSystem, electoralThreshold, seatDistribution, showResults, setND, setSYRIZA, setPASOK, setKKE, setEL, setNIKI, setPE, setMeRA25, setEPAM, setED, setOP, setPS, setANTARSYA, setEK, setKKEML, setSpartiates, setElectoralSystem, setElectoralThreshold, setSeatDistribution, setShowResults}) {
+export default function Home({nd, syriza, pasok, kke, spartiates, el, niki, pe, mera25, epam, ed, op, ps, antarsya, ek, kkeml, electoralSystem, electoralThreshold, seatDistribution, showResults, setND, setSYRIZA, setPASOK, setKKE, setSpartiates, setEL, setNIKI, setPE, setMeRA25, setEPAM, setED, setOP, setPS, setANTARSYA, setEK, setKKEML, setElectoralSystem, setElectoralThreshold, setSeatDistribution, setShowResults}) {
     const navigate = useNavigate();
 
     function isMobileDevice() {
@@ -16,6 +16,7 @@ export default function Home({nd, syriza, pasok, kke, el, niki, pe, mera25, epam
         const syrizaPercentage = parseFloat(syriza);
         const pasokPercentage = parseFloat(pasok);
         const kkePercentage = parseFloat(kke);
+        const spartiatesPercentage = parseFloat(spartiates);
         const elPercentage = parseFloat(el);
         const nikiPercentage = parseFloat(niki);
         const pePercentage = parseFloat(pe);
@@ -27,14 +28,13 @@ export default function Home({nd, syriza, pasok, kke, el, niki, pe, mera25, epam
         const antarsyaPercentage = parseFloat(antarsya);
         const ekPercentage = parseFloat(ek);
         const kkemlPercentage = parseFloat(kkeml);
-        const spartiatesPercentage = parseFloat(spartiates);
 
-        if(isNaN(ndPercentage) || isNaN(syrizaPercentage) || isNaN(pasokPercentage) || isNaN(kkePercentage) || isNaN(elPercentage) || isNaN(nikiPercentage) || isNaN(pePercentage) || isNaN(mera25Percentage) || isNaN(epamPercentage) || isNaN(edPercentage) || isNaN(opPercentage) || isNaN(psPercentage) || isNaN(antarsyaPercentage) || isNaN(ekPercentage) || isNaN(kkemlPercentage) || isNaN(spartiatesPercentage)) {
+        if(isNaN(ndPercentage) || isNaN(syrizaPercentage) || isNaN(pasokPercentage) || isNaN(kkePercentage) || isNaN(spartiatesPercentage) || isNaN(elPercentage) || isNaN(nikiPercentage) || isNaN(pePercentage) || isNaN(mera25Percentage) || isNaN(epamPercentage) || isNaN(edPercentage) || isNaN(opPercentage) || isNaN(psPercentage) || isNaN(antarsyaPercentage) || isNaN(ekPercentage) || isNaN(kkemlPercentage)) {
             alert('Παρακαλώ εισάγετε έγκυρα ποσοστά ψήφων για κάθε κόμμα.');
             return;
         }
 
-        const percentages = [ndPercentage, syrizaPercentage, pasokPercentage, kkePercentage, elPercentage, nikiPercentage, pePercentage, mera25Percentage, epamPercentage, edPercentage, opPercentage, psPercentage, antarsyaPercentage, ekPercentage, kkemlPercentage, spartiatesPercentage];
+        const percentages = [ndPercentage, syrizaPercentage, pasokPercentage, kkePercentage, spartiatesPercentage, elPercentage, nikiPercentage, pePercentage, mera25Percentage, epamPercentage, edPercentage, opPercentage, psPercentage, antarsyaPercentage, ekPercentage, kkemlPercentage];
         let newSeatDistribution;
         if (electoralSystem === "apliAnalogiki") {
           newSeatDistribution = apliAnalogiki(percentages, electoralThreshold);
@@ -65,7 +65,7 @@ export default function Home({nd, syriza, pasok, kke, el, niki, pe, mera25, epam
                 </div>
             </div>
             <p>Η σειρά των κομμάτων βασίζεται στα αποτελέσματά τους στις προηγούμενες εκλογές.</p>
-            <Ballot nd={nd} syriza={syriza} pasok={pasok} kke={kke} el={el} niki={niki} pe={pe} mera25={mera25} epam={epam} ed={ed} op={op} ps={ps} antarsya={antarsya} ek={ek} kkeml={kkeml} spartiates={spartiates} showResults={showResults} setND={setND} setSYRIZA={setSYRIZA} setPASOK={setPASOK} setKKE={setKKE} setEL={setEL} setNIKI={setNIKI} setPE={setPE} setMeRA25={setMeRA25} setEPAM={setEPAM} setED={setED} setOP={setOP} setPS={setPS} setANTARSYA={setANTARSYA} setEK={setEK} setKKEML={setKKEML} setSpartiates={setSpartiates} setShowResults={setShowResults} />
+            <Ballot nd={nd} syriza={syriza} pasok={pasok} kke={kke} spartiates={spartiates} el={el} niki={niki} pe={pe} mera25={mera25} epam={epam} ed={ed} op={op} ps={ps} antarsya={antarsya} ek={ek} kkeml={kkeml} showResults={showResults} setND={setND} setSYRIZA={setSYRIZA} setPASOK={setPASOK} setKKE={setKKE} setSpartiates={setSpartiates} setEL={setEL} setNIKI={setNIKI} setPE={setPE} setMeRA25={setMeRA25} setEPAM={setEPAM} setED={setED} setOP={setOP} setPS={setPS} setANTARSYA={setANTARSYA} setEK={setEK} setKKEML={setKKEML} setShowResults={setShowResults} />
             {isMobileDevice() ? <Button className='submit-btn' onClick={() => { setShowResults(true); handleResults(); }}>Υποβολή</Button> :
             <Button className='submit-btn' onClick={() => { setShowResults(true); handleResults(); }}>Υποβολή</Button> }
         </Stack>
