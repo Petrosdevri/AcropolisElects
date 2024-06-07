@@ -35,6 +35,11 @@ export default function Home({nd, syriza, pasok, kke, spartiates, el, niki, pe, 
         }
 
         const percentages = [ndPercentage, syrizaPercentage, pasokPercentage, kkePercentage, spartiatesPercentage, elPercentage, nikiPercentage, pePercentage, mera25Percentage, epamPercentage, edPercentage, opPercentage, psPercentage, antarsyaPercentage, ekPercentage, kkemlPercentage];
+        const totalPercentages = percentages.reduce((a, b) => a + b, 0);
+        if (totalPercentages > 100) {
+            alert('Το άθροισμα των ποσοστών που εισηγάγατε δεν πρέπει να ξεπερνά το 100%!');
+            return;
+        }
         let newSeatDistribution;
         if (electoralSystem === "apliAnalogiki") {
           newSeatDistribution = apliAnalogiki(percentages, electoralThreshold);
