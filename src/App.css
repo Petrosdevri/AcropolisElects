@@ -4,6 +4,7 @@
   font-family: 'Poppins', sans-serif;
   font-weight: 500 !important;
   color: #0055A0;
+  overflow: hidden;
   text-align: center;
 }
 
