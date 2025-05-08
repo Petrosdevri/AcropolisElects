@@ -24,7 +24,7 @@ export default function Results({nd, syriza, pasok, kke, spartiates, el, niki, p
         {party: 'ΑΝΤΑΡΣΥΑ', percentage: antarsya, fill: partyColors[13]},
         {party: 'ΕΚ', percentage: ek, fill: partyColors[14]},
         {party: 'ΚΚΕ Μ-Λ', percentage: kkeml, fill: partyColors[15]}
-    ].filter(p => p.percentage > 0);
+    ].filter(p => p.percentage > 0).sort((a, b) => b.percentage - a.percentage);
 
     const maxPercentage = Math.max(...barData.map(entry => entry.percentage));
     const upperHeight = Math.ceil(maxPercentage / 5) * 5;
@@ -46,7 +46,7 @@ export default function Results({nd, syriza, pasok, kke, spartiates, el, niki, p
         {party: 'ΑΝΤΑΡΣΥΑ', seats: seatDistribution[13], fill: partyColors[13]},
         {party: 'ΕΚ', seats: seatDistribution[14], fill: partyColors[14]},
         {party: 'ΚΚΕ Μ-Λ', seats: seatDistribution[15], fill: partyColors[15]}
-    ].filter(p => p.seats > 0);
+    ].filter(p => p.seats > 0).sort((a, b) => b.seats - a.seats);
 
     return (
         <div className='results'>
